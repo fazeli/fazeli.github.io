@@ -141,19 +141,9 @@ for (let i = 0; i < navigationLinks.length; i++) {
 // NEW
 
 document.addEventListener("DOMContentLoaded", () => {
-  const toggleButton = document.createElement("button");
-  const lightIcon = "https://img.icons8.com/ios-filled/50/000000/sun--v1.png";
-  const darkIcon =
-    "https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png";
   const servicesContainer = document.querySelector(".services2");
   const modal = document.querySelector(".modal");
   const closeModal = document.querySelector(".close-btn");
-
-  let darkMode = false;
-
-  toggleButton.innerHTML = `<img src="${darkIcon}" alt="Toggle Dark Mode">`;
-  toggleButton.classList.add("toggle-mode");
-  document.body.appendChild(toggleButton);
 
   // Add modal functionality for all services
   document.querySelectorAll(".service2").forEach((service2) => {
@@ -187,15 +177,5 @@ document.addEventListener("DOMContentLoaded", () => {
       }, index * 200);
     });
   };
-
-  // Dark mode toggle
-  toggleButton.addEventListener("click", () => {
-    darkMode = !darkMode;
-    document.body.classList.toggle("dark-mode");
-    toggleButton.innerHTML = `<img src="${
-      darkMode ? lightIcon : darkIcon
-    }" alt="Toggle Dark Mode">`;
-  });
-
   animateServices();
 });
